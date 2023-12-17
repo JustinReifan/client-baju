@@ -7,67 +7,76 @@
     <link rel="stylesheet" href="../assets/css/shop.css" />
   </head>
   <body>
-    <!-- navbar -->
-    <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
-      <div class="container 2xl:min-w-full">
-        <div class="flex items-center justify-between relative md:justify-normal 2xl:justify-between">
-          <div class="px-0 md:w-1/4 lg:w-1/4 flex 2xl:w-[80px]">
-            <a href="../index.html" class="font-bold text-lg text-primary block py-2 w-[60px] 2xl:w-[80px]"><img src="../assets/logo/logoblack.png" alt="" /></a>
-          </div>
+    <div id="loader" class="relative flex items-center justify-center h-screen overflow-hidden">
+      <video src="/assets/background/loader.mp4" autoplay muted loop class="absolute z-10 w-auto min-w-full min-h-full max-w-none scale-[0.2] md:scale-[0.3] lg:scale-[0.4] mb-20 md:mb-32 lg:mb-52 2xl:scale-50"></video>
+      <h2 class="absolute z-10 w-full text-center px-2 bottom-80 font-mono">Loading Items..</h2>
+      <div class="loader-line z-10 absolute bottom-52"></div>
+    </div>
+    <div id="content" class="hidden">
+      <!-- navbar -->
+      <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
+        <div class="container 2xl:min-w-full">
+          <div class="flex items-center justify-between relative md:justify-normal 2xl:justify-between">
+            <div class="px-0 md:w-1/4 lg:w-1/4 flex 2xl:w-[80px]">
+              <a href="../index.html" class="font-bold text-lg text-primary block py-2 w-[60px] 2xl:w-[80px]"><img src="../assets/logo/logoblack.png" alt="" /></a>
+            </div>
 
-          <div class="flex items-center px-4 lg:px-6">
-            <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden">
-              <span class="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
-              <span class="hamburger-line transition duration-300 ease-in-out"></span>
-              <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
-            </button>
+            <div class="flex items-center px-4 lg:px-6">
+              <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden">
+                <span class="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
+                <span class="hamburger-line transition duration-300 ease-in-out"></span>
+                <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
+              </button>
 
-            <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
-              <ul class="block lg:flex">
-                <li class="group">
-                  <a href="../index.html" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Home</a>
-                </li>
-                <li class="group">
-                  <a href="shop.html" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Shop</a>
-                </li>
-                <li class="group">
-                  <a href="gallery.html" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Gallery</a>
-                </li>
-                <li class="group">
-                  <a href="contact.html" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Contact</a>
-                </li>
-              </ul>
-            </nav>
+              <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+                <ul class="block lg:flex">
+                  <li class="group">
+                    <a href="../index.html" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Home</a>
+                  </li>
+                  <li class="group">
+                    <a href="shop.html" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Shop</a>
+                  </li>
+                  <li class="group">
+                    <a href="gallery.html" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Gallery</a>
+                  </li>
+                  <li class="group">
+                    <a href="contact.html" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Contact</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="2xl:ml-16"></div>
           </div>
-          <div class="2xl:ml-16"></div>
         </div>
-      </div>
-    </header>
-    <!-- navbar end-->
+      </header>
+      <!-- navbar end-->
 
-    <!-- hero section start-->
-    <section id="home" class="pt-36 lg:pt-12">
-      <div class="container">
-        <div class="flex flex-wrap">
-          <div class="w-full self-center px-4 lg:w-1/2">
-            <h1 class="text-base font-medium text-dark  md:text-xl mb-3"><span class="block font-semibold text-dark tracking-wider text-base mt-1 lg:text-base ">ABOUT</span></h1>
-            <p class="font-medium text-sm text-left text-dark mb-10 leading-relaxed lg:text-base">Studio Khuna is a local brand based in Jakarta, Indonesia. We over at Khuna prioritize quality while maintaining slick and fashionable styles to our apparel. We design and pick our fabrics by hand, making sure of the quality our products. <br> <br>
+      <!-- hero section start-->
+      <section id="home" class="pt-36 lg:pt-12">
+        <div class="container">
+          <div class="flex flex-wrap">
+            <div class="w-full self-center px-4 lg:w-1/2">
+              <h1 class="text-base font-medium text-dark  md:text-xl mb-3"><span class="block font-semibold text-dark tracking-wider text-base mt-1 lg:text-base ">ABOUT</span></h1>
+              <p class="font-medium text-sm text-left text-dark mb-10 leading-relaxed lg:text-base">Studio Khuna is a local brand based in Jakarta, Indonesia. We over at Khuna prioritize quality while maintaining slick and fashionable styles to our apparel. We design and pick our fabrics by hand, making sure of the quality our products. <br> <br>
 
-              Khuna was started in 2022 as a creative outlet for future project to come. As time went on, Khuna evolved from a concept to a fashion brand. Our passion resides in street-wear aesthetic - we work with that concept in mind making sure to bestow the best look and feel for our audience.<br><br>
-              
-              We strongly believe in our ability to create apparel that will boost your confidence!
-              Thankyou, LoveY'all ♡<br></span>
-            </p>
-          </div>
-          <div class="w-full self-end px-4 lg:w-1/2">
-            <div class="mt-10 lg:mt-9 lg:right-0">
-              <img src="../assets/logo/iconlogo.png" alt="Justin" class="max-w-full mx-auto" />
+                Khuna was started in 2022 as a creative outlet for future project to come. As time went on, Khuna evolved from a concept to a fashion brand. Our passion resides in street-wear aesthetic - we work with that concept in mind making sure to bestow the best look and feel for our audience.<br><br>
+                
+                We strongly believe in our ability to create apparel that will boost your confidence!
+                Thankyou, LoveY'all ♡<br></span>
+              </p>
+            </div>
+            <div class="w-full self-end px-4 lg:w-1/2">
+              <div class="mt-10 lg:mt-9 lg:right-0">
+                <img src="../assets/logo/iconlogo.png" alt="Justin" class="max-w-full mx-auto" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- hero section end -->
+      </section>
+      <!-- hero section end -->
+    </div>
+
+    
 
     <script src="../js/script.js"></script>
   </body>

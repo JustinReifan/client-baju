@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
       hideLoader();
       showContent();
-  }, 3100); // Replace with your actual data loading logic and time
+  }, 1500); // Replace with your actual data loading logic and time
 
   function hideLoader() {
       const loader = document.getElementById("loader");
