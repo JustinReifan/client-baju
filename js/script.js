@@ -44,6 +44,7 @@ const darkToggle = document.querySelector('#dark-toggle');
 const html = document.querySelector('html');
 const logo = document.querySelector('#logo');
 const iconlogo = document.querySelector('#iconlogo');
+const loaderimg = document.querySelector('#loaderimg');
 
 
 
@@ -67,8 +68,10 @@ if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.match
   darkToggle.checked = true;
   logo.src = '../assets/logo/logowhite.png';
   iconlogo.src = '../assets/logo/iconlogo-white.png';
+  loaderimg.src = '../assets/background/loader.mp4';
 } else {
   darkToggle.checked = false;
   logo.src = '../assets/logo/logoblack.png';
   iconlogo.src = '../assets/logo/iconlogo.png';
+  loaderimg.src = '../assets/background/loader-black.mp4';
 }
