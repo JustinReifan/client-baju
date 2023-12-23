@@ -5,12 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Tailwind</title>
     <link rel="stylesheet" href="../assets/css/shop.css" />
+    <script>
+      if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
   </head>
-  <body>
+  <body class="dark:bg-dark">
     <div id="loader" class="relative flex items-center justify-center h-screen overflow-hidden">
-      <video src="/assets/background/loader.mp4" autoplay muted loop class="absolute z-10 w-auto min-w-full min-h-full max-w-none scale-[0.2] md:scale-[0.3] lg:scale-[0.4] mb-20 md:mb-32 lg:mb-52 2xl:scale-50"></video>
-      <h2 class="absolute z-10 w-full text-center px-2 bottom-80 font-mono">Loading Items..</h2>
-      <div class="loader-line z-10 absolute bottom-52"></div>
+      <img src="/assets/background/loader.gif" class="absolute z-10 w-auto min-w-full min-h-full max-w-none scale-[0.2] md:scale-[0.3] lg:scale-[0.4] mb-5 2xl:scale-50" />
+      <h2 class="absolute z-10 w-full text-center px-2 bottom-72 font-mono md:bottom-64 lg:bottom-56 2xl:bottom-40 dark:text-slate-200">Loading Items..</h2>
+      <div class="loader-line z-10 absolute bottom-44 md:bottom-36 lg:bottom-28 2xl:bottom-10"></div>
     </div>
     <div id="content" class="hidden">
       <!-- navbar -->
@@ -18,29 +25,98 @@
         <div class="container 2xl:min-w-full">
           <div class="flex items-center justify-between relative md:justify-normal 2xl:justify-between">
             <div class="px-0 md:w-1/4 lg:w-1/4 flex 2xl:w-[80px]">
-              <a href="../index.html" class="font-bold text-lg text-primary block py-2 w-[60px] 2xl:w-[80px]"><img src="../assets/logo/logoblack.png" alt="" /></a>
+              <a href="../index.html" class="font-bold text-lg text-primary block py-2 w-[60px] 2xl:w-[80px]"><img id="logo" src="../assets/logo/logoblack.png" alt="" /></a>
             </div>
 
             <div class="flex items-center px-4 lg:px-6">
               <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden">
-                <span class="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
-                <span class="hamburger-line transition duration-300 ease-in-out"></span>
-                <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
+                <span class="hamburger-line transition duration-300 ease-in-out origin-top-left dark:bg-white"></span>
+                <span class="hamburger-line transition duration-300 ease-in-out dark:bg-white"></span>
+                <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left dark:bg-white"></span>
               </button>
 
-              <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+              <nav
+                id="nav-menu"
+                class="hidden absolute py-5 bg-white dark:bg-dark dark:lg:bg-transparent dark:lg:shadow-none dark:shadow-2xl shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none"
+              >
                 <ul class="block lg:flex">
                   <li class="group">
-                    <a href="../index.html" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Home</a>
+                    <a href="../index.html" class="text-base text-dark dark:text-white py-2 mx-8 flex group-hover:text-primary">Home</a>
                   </li>
                   <li class="group">
-                    <a href="gallery.html" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Gallery</a>
+                    <a href="shop.html" class="text-base text-dark dark:text-white py-2 mx-8 flex group-hover:text-primary">Shop</a>
                   </li>
                   <li class="group">
-                    <a href="about.html" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">About</a>
+                    <a href="gallery.html" class="text-base text-dark dark:text-white py-2 mx-8 flex group-hover:text-primary">Gallery</a>
                   </li>
                   <li class="group">
-                    <a href="contact.html" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Contact</a>
+                    <a href="about.html" class="text-base text-dark dark:text-white py-2 mx-8 flex group-hover:text-primary">About</a>
+                  </li>
+                  <li class="mt-3 flex items-center pl-8 lg:mt-0">
+                    <div class="flex items-center">
+                      <span class="mr-2 text-sm">
+                        <svg
+                          fill="#000000"
+                          class="dark:fill-white"
+                          height="25px"
+                          width="25px"
+                          version="1.1"
+                          id="Layer_1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 290 290"
+                          xml:space="preserve"
+                        >
+                          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                          <g id="SVGRepo_iconCarrier">
+                            <g id="XMLID_517_">
+                              <path
+                                id="XMLID_518_"
+                                d="M145.002,80c-35.84,0-64.998,29.159-64.998,65.001c0,35.841,29.158,64.999,64.998,64.999 c35.842,0,65.002-29.159,65.002-64.999C210.004,109.159,180.844,80,145.002,80z M145.002,180 c-19.298,0-34.998-15.701-34.998-34.999c0-19.299,15.7-35.001,34.998-35.001c19.3,0,35.002,15.701,35.002,35.001 C180.004,164.299,164.302,180,145.002,180z"
+                              ></path>
+                              <path id="XMLID_521_" d="M145,50c8.284,0,15-6.716,15-15V15c0-8.284-6.716-15-15-15s-15,6.716-15,15v20 C130,43.284,136.716,50,145,50z"></path>
+                              <path id="XMLID_522_" d="M145,240c-8.284,0-15,6.716-15,15v20c0,8.284,6.716,15,15,15s15-6.716,15-15v-20 C160,246.716,153.284,240,145,240z"></path>
+                              <path id="XMLID_523_" d="M275,130h-20c-8.284,0-15,6.716-15,15s6.716,15,15,15h20c8.284,0,15-6.716,15-15S283.284,130,275,130z"></path>
+                              <path id="XMLID_524_" d="M50,145c0-8.284-6.716-15-15-15H15c-8.284,0-15,6.716-15,15s6.716,15,15,15h20 C43.284,160,50,153.284,50,145z"></path>
+                              <path
+                                id="XMLID_525_"
+                                d="M222.781,82.218c3.838,0,7.678-1.465,10.606-4.393l14.143-14.142c5.858-5.858,5.858-15.355,0-21.213 c-5.857-5.858-15.355-5.857-21.213,0l-14.143,14.142c-5.858,5.858-5.858,15.355,0,21.213 C215.104,80.753,218.942,82.218,222.781,82.218z"
+                              ></path>
+                              <path
+                                id="XMLID_526_"
+                                d="M56.612,212.174L42.47,226.316c-5.858,5.858-5.858,15.355,0,21.213c2.929,2.929,6.768,4.393,10.606,4.393 c3.838,0,7.678-1.465,10.606-4.393l14.143-14.142c5.858-5.858,5.858-15.355,0-21.213C71.969,206.317,62.471,206.317,56.612,212.174 z"
+                              ></path>
+                              <path
+                                id="XMLID_527_"
+                                d="M233.388,212.174c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213 l14.143,14.142c2.929,2.929,6.768,4.393,10.606,4.393c3.839,0,7.678-1.464,10.607-4.393c5.858-5.858,5.858-15.355,0-21.213 L233.388,212.174z"
+                              ></path>
+                              <path
+                                id="XMLID_530_"
+                                d="M56.612,77.825c2.929,2.929,6.768,4.393,10.607,4.393c3.839,0,7.678-1.464,10.606-4.394 c5.858-5.858,5.858-15.355,0-21.213L63.683,42.469c-5.857-5.857-15.355-5.858-21.213,0c-5.858,5.858-5.858,15.355,0,21.213 L56.612,77.825z"
+                              ></path>
+                            </g>
+                          </g>
+                        </svg>
+                      </span>
+                      <input type="checkbox" class="hidden" id="dark-toggle" />
+                      <label for="dark-toggle">
+                        <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
+                          <div class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out"></div>
+                        </div>
+                      </label>
+                      <span class="ml-2 text-sm text-white">
+                        <svg fill="#000000" class="dark:fill-white" height="25px" width="25px" viewBox="0 0 35 35" data-name="Layer 2" id="Layer_2" xmlns="http://www.w3.org/2000/svg">
+                          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                          <g id="SVGRepo_iconCarrier">
+                            <path
+                              d="M18.44,34.68a18.22,18.22,0,0,1-2.94-.24,18.18,18.18,0,0,1-15-20.86A18.06,18.06,0,0,1,9.59.63,2.42,2.42,0,0,1,12.2.79a2.39,2.39,0,0,1,1,2.41L11.9,3.1l1.23.22A15.66,15.66,0,0,0,23.34,21h0a15.82,15.82,0,0,0,8.47.53A2.44,2.44,0,0,1,34.47,25,18.18,18.18,0,0,1,18.44,34.68ZM10.67,2.89a15.67,15.67,0,0,0-5,22.77A15.66,15.66,0,0,0,32.18,24a18.49,18.49,0,0,1-9.65-.64A18.18,18.18,0,0,1,10.67,2.89Z"
+                            ></path>
+                          </g>
+                        </svg>
+                      </span>
+                    </div>
                   </li>
                 </ul>
               </nav>
@@ -62,16 +138,16 @@
             </div>
             <div class="w-full self-center px-4 lg:w-1/2">
               <h1 class="text-sm font-extralight text-gray-500 md:text-lg lg:text-2xl">Studio Khuna <span class="block font-bold text-dark text-2xl mt-1 md:text-4xl dark:text-white">EXCLUSIVE ANATOMY TEE WHITE </span></h1>
-              <h2 class="font-medium text-dark text-lg mb-6 md:text-2xl lg:text-3xl lg:mt-2 lg:ms-1">IDR 219.000</h2>
+              <h2 class="font-medium text-dark text-lg mb-6 md:text-2xl lg:text-3xl lg:mt-2 lg:ms-1 dark:text-slate-200">IDR 219.000</h2>
 
-              <h2 class="font-semibold text-dark mb-3 text-base md:text-lg lg:ms-1">Size</h2>
-              <ul class="flex flex-row gap-2 mb-6 lg:ms-1">
+              <h2 class="font-semibold text-dark mb-3 text-base md:text-lg lg:ms-1 dark:text-slate-200">Size</h2>
+              <ul class="flex flex-row gap-2 mb-6 lg:ms-1 dark:text-slate-200">
                 <li class="border p-2 hover:shadow-lg md:p-4">S</li>
                 <li class="border p-2 hover:shadow-lg md:p-4">M</li>
                 <li class="border p-2 hover:shadow-lg md:p-4">L</li>
                 <li class="border p-2 hover:shadow-lg md:p-4">XL</li>
               </ul>
-              <div class="ms-1 mb-6">
+              <div class="ms-1 mb-6 dark:text-slate-200">
                 <p class="font-light text-sm">The First Collection Of KHUNA</p>
                 <p class="font-light text-sm">Apparel Featuring Exclusive 1 of 30 Shirts.</p>
                 <br />
@@ -83,9 +159,7 @@
               </div>
               <div class="flex flex-col gap-4">
                 <hr / class=" lg:ms-1">
-                <a href="https://shp.ee/edvadez" class="text-base block font-semibold text-white bg-gray-500 py-4 hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out text-center outline outline-offset-1 outline-1 lg:ms-1"
-                  >ORDER NOW</a
-                >
+                <a href="https://shp.ee/edvadez" class="text-base block font-semibold text-white bg-gray-500 py-4 hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out text-center lg:ms-1">ORDER NOW</a>
               </div>
             </div>
           </div>
